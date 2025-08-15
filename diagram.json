@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -191.4, "left": -39, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 259.43, "left": 460.87, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -134.1, "left": -168.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -188.05,
+      "left": -182.4,
+      "attrs": { "value": "4700" }
+    },
+    { "type": "wokwi-dht22", "id": "dht2", "top": -153.3, "left": 340.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -216.85,
+      "left": 336,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 16,
+      "left": -42.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-microsd-card", "id": "sd2", "top": -134.17, "left": 249.67, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v0" ] ],
+    [ "r1:2", "uno:5V", "green", [ "v0" ] ],
+    [ "r1:1", "dht1:SDA", "green", [ "v0" ] ],
+    [ "dht2:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "dht2:SDA", "uno:3", "green", [ "v0" ] ],
+    [ "dht2:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "r2:2", "dht2:SDA", "green", [ "v0" ] ],
+    [ "r2:1", "uno:5V", "green", [ "v0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "uno:A4", "lcd1:SDA", "green", [ "v0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "sd2:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "sd2:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "sd2:SCK", "uno:13", "green", [ "h0" ] ],
+    [ "sd2:DI", "uno:11", "green", [ "h0" ] ],
+    [ "sd2:DO", "uno:12", "green", [ "h0" ] ],
+    [ "sd2:CS", "uno:4", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
