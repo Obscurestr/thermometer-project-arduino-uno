@@ -6,7 +6,7 @@ This project is a **multi-room thermometer** built with Arduino. It reads temper
 ---
 
 ## Features
-- **Dual DHT11 sensors**: Measures temperature and humidity in two separate rooms or zones.
+- **Dual DHT22 sensors**: Measures temperature and humidity in two separate rooms or zones.
 - **16x2 I2C LCD**: Displays live readings for both rooms.
 - **Relay control**: Automatically turns on/off a heater based on Room 1 temperature threshold.
 - **Data logging**: Saves temperature and humidity readings to a microSD card (`data.txt`) for long-term tracking.
@@ -16,7 +16,7 @@ This project is a **multi-room thermometer** built with Arduino. It reads temper
 
 ## Components Needed
 - Arduino Uno (or ESP32/ESP8266 for Wi-Fi upgrade)
-- 2 × DHT11 temperature & humidity sensors
+- 2 × DHT22 temperature & humidity sensors
 - 16x2 I2C LCD display
 - Relay module
 - MicroSD card module
